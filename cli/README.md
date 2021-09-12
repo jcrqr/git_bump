@@ -7,10 +7,10 @@
 Currently, it's only possible to install Git Bump using `deno install`:
 
 ```bash
-$ deno install --allow-run --allow-read --allow-write https://raw.githubusercontent.com/crqra/git-bump/0.1.1/cli/git-bump.ts
+$ deno install --allow-run --allow-read --allow-write https://raw.githubusercontent.com/crqra/git_bump/0.1.1/cli/git-bump.ts
 ```
 
-Alternatively, you can download a pre-built binary from the [latest release](https://github.com/crqra/git-bump/releases/latest).
+Alternatively, you can download a pre-built binary from the [latest release](https://github.com/crqra/git_bump/releases/latest).
 
 ## Usage
 
