@@ -5,7 +5,7 @@
 ## Installation
 
 ```ts
-import { GitBump } from "https://deno.land/x/git_bump@0.1.0/mod.ts";
+import { GitBump } from "https://deno.land/x/git_bump@0.1.1/mod.ts";
 ```
 
 ## Contributing
