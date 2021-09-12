@@ -120,6 +120,12 @@ export class GitBump {
   }
 
   async bump() {
+    if (this.incrementType === IncrementType.NONE) {
+      throw new Error(
+        `Nothing to release. Incrementation type is ${this.incrementTypeName}`,
+      );
+    }
+
     if (this.versionFile) {
       if (this.shouldLog) {
         console.log(`updating version file: ${this.versionFile}`);
@@ -189,7 +195,7 @@ export class GitBump {
       : undefined;
 
     if (!currentVersion) {
-      throw new Error("failed to detect current version")
+      throw new Error("failed to detect current version");
     }
 
     const isCurrVersionTagged = versions.includes(currentVersion);
