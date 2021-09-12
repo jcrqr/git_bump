@@ -14,6 +14,29 @@
 
 - Customization. It's not out of the roadmap but it's not a priority
 
+## Installation
+
+- [Installing CLI](cli#installation)
+- [Installing Library](lib#installation)
+
+## Usage
+
+```bash
+$ git bump
+git-bump
+
+bumps the current project's version
+
+Options:
+  -v, --verbose          Be more verbose                               [boolean]
+  -c, --current-version  Shows project's current version               [boolean]
+  -n, --next-version     Shows project's next version                  [boolean]
+  -d, --dry-run          Runs the command without creating and pushing the tag
+                                                                       [boolean]
+      --version          Show version number                           [boolean]
+  -h, --help             Show help                                     [boolean]
+```
+
 ## Documentation
 
 - Check [lib](lib) for documentation on the library
