@@ -7,6 +7,7 @@ export interface GitBumpArgs {
   nextVersion: boolean;
   incrementationType: boolean;
   verbose: boolean;
+  versionFile: string;
 }
 
 async function gitBump(args: GitBumpArgs) {
@@ -14,6 +15,7 @@ async function gitBump(args: GitBumpArgs) {
     cwd: Deno.cwd(),
     dryRun: args.dryRun,
     verbose: args.verbose,
+    versionFile: args.versionFile
   });
 
   if (args.currentVersion) {
@@ -68,6 +70,11 @@ yargs()
     alias: "dry-run",
     type: "boolean",
     describe: "Runs the command without creating and pushing the tag",
+  })
+  .option("f", {
+    alias: "version-file",
+    type: "string",
+    describe: "Specify the version file to use",
   })
   .version(version)
   .parse(Deno.args);

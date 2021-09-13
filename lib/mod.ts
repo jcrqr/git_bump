@@ -29,13 +29,13 @@ export interface GitBumpOptions extends GitBumpInitOptions {
   currentVersion: SemVer;
   nextVersion: SemVer;
   incrementType: IncrementType;
-  versionFile?: string;
 }
 
 export interface GitBumpInitOptions {
   cwd?: string;
   dryRun?: boolean;
   verbose?: boolean;
+  versionFile?: string;
 }
 
 export const BUMP_MAP: Record<ChangeType, IncrementType> = {
@@ -182,7 +182,10 @@ export class GitBump {
   static async init(options: GitBumpInitOptions) {
     const cwd = options.cwd || Deno.cwd();
     const git = new Git(cwd);
-    const versionFile = await detectVersionFile(cwd);
+
+    const versionFile = options.versionFile
+      ? options.versionFile
+      : await detectVersionFile(cwd);
 
     const versions = (await git.tags())
       .filter((tag) => semverValid(tag))
